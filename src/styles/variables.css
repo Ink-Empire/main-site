@@ -1,0 +1,22 @@
+:root {
+  /* Core palette */
+  --black:       #0D0D0D;
+  --ink:         #1A1A1A;
+  --charcoal:    #3D3D3D;
+  --mid:         #7A7A7A;
+  --silver:      #ABABAB;
+  --white:       #FAFAF8;
+
+  /* Rules / borders */
+  --rule:        #E0E0E0;
+  --rule-dark:   #C8C8C8;
+
+  /* Accent */
+  --red:         #B01C2E;
+  --red-soft:    #C7263A;
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'Cormorant Garamond', serif;
+  --font-mono:    'DM Mono', monospace;
+}
