@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Ink Empire — Corporate Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing and contact site for Ink Empire Limited. Built with React + Vite, deployed on Vercel.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend**: React + TypeScript (Vite)
+- **Backend**: Single Vercel serverless function (`/api/contact`) for email via Resend
+- **Hosting**: Vercel
 
-## React Compiler
+## Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Runs at `http://localhost:5173`. Contact form requires the Vercel CLI for the serverless function:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+vercel dev
 ```
+
+## Environment Variables
+
+Set in Vercel dashboard (Settings > Environment Variables):
+
+| Variable | Description |
+|---|---|
+| `RESEND_API_KEY` | Resend API key for contact form emails |
+
+For local dev, create a `.env` file:
+
+```
+RESEND_API_KEY=re_your_key_here
+```
+
+## Project Structure
+
+```
+src/
+├── styles/variables.css    # Colors and font tokens
+├── components/             # Page sections (Header, Hero, Mission, Products, Contact, Footer)
+├── App.tsx                 # Layout shell
+├── index.css               # Global reset
+└── main.tsx                # Entry point
+api/
+└── contact.ts              # Vercel serverless function (Resend)
+```
+
+## Deployment
+
+Pushes to `main` auto-deploy via Vercel.
+
+## Build
+
+```bash
+npm run build
+```
+
+Output goes to `dist/`.
