@@ -1,22 +1,54 @@
+@font-face {
+  font-family: 'Pavot';
+  src: url('/fonts/Pavot-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pavot';
+  src: url('/fonts/Pavot-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pavot';
+  src: url('/fonts/Pavot-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pavot';
+  src: url('/fonts/Pavot-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pavot';
+  src: url('/fonts/Pavot-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pavot';
+  src: url('/fonts/Pavot-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
-  /* Core palette */
-  --black:       #0D0D0D;
-  --ink:         #1A1A1A;
-  --charcoal:    #3D3D3D;
-  --mid:         #7A7A7A;
-  --silver:      #ABABAB;
-  --white:       #FAFAF8;
+  --red:    #C8102E;
+  --black:  #0A0A0A;
+  --white:  #FFFFFF;
+  --rule:   #E2E2E2;
+  --muted:  #888;
 
-  /* Rules / borders */
-  --rule:        #E0E0E0;
-  --rule-dark:   #C8C8C8;
-
-  /* Accent */
-  --red:         #B01C2E;
-  --red-soft:    #C7263A;
-
-  /* Typography */
-  --font-display: 'Playfair Display', serif;
-  --font-body:    'Cormorant Garamond', serif;
-  --font-mono:    'DM Mono', monospace;
+  --f-bebas: 'Bebas Neue', sans-serif;
+  --f-pavot: 'Pavot', Georgia, serif;
+  --f-body:  'DM Sans', sans-serif;
 }

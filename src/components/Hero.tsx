@@ -2,24 +2,43 @@ import './Hero.css';
 
 export default function Hero() {
   return (
-    <div className="container">
-      <section className="hero">
+    <section className="hero">
+      <div className="hero-bar" />
+      <div className="hero-grid">
         <div className="hero-left">
-          <div className="hero-kicker">Tools for Independent Creators</div>
-          <h1 className="hero-title">
-            Ink
-            <span className="italic-line">Empire</span>
-            <span className="sub-line">Limited</span>
-          </h1>
+          <div className="wordmark">
+            <span className="wm-ink">INK</span>
+            <span className="wm-empire">Empire</span>
+            <div className="wm-foot">
+              <span className="wm-rule" />
+              <span className="wm-sub">Tools for independent creators</span>
+            </div>
+          </div>
         </div>
         <div className="hero-right">
-          <div className="hero-rule" />
-          <p className="hero-description">
+          <p className="hero-statement">
             Your work shouldn't depend on an algorithm. We build spaces where{' '}
-            <strong>independent creators get found on merit, not reach.</strong>
+            <em>independent creators get found on merit, not reach.</em>
           </p>
+          <div className="hero-cta">
+            <a href="#contact">Get in touch &nbsp;&rarr;</a>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+      <div className="hero-foot">
+        <div className="hf-item">
+          <span className="hf-num">01</span>
+          <span className="hf-label">Products in market</span>
+        </div>
+        <div className="hf-item">
+          <span className="hf-num">&mdash;</span>
+          <span className="hf-label">Indie studio, NZ</span>
+        </div>
+        <div className="hf-item">
+          <span className="hf-num">&infin;</span>
+          <span className="hf-label">Artists we'll never slow down</span>
+        </div>
+      </div>
+    </section>
   );
 }

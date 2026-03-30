@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import SectionHeader from './SectionHeader';
 import './Contact.css';
 
 export default function Contact() {
@@ -31,70 +30,63 @@ export default function Contact() {
   };
 
   return (
-    <div className="container">
-      <section className="contact" id="contact">
-        <SectionHeader label="Contact" />
-        <div className="contact-layout">
-          <div className="contact-grid">
-            <div className="contact-cell">
-              <div className="contact-cell-label">General Enquiries</div>
-              <div className="contact-cell-value">
-                <a href="mailto:hello@inkempire.net">hello@inkempire.net</a>
-              </div>
-            </div>
-            <div className="contact-cell">
-              <div className="contact-cell-label">Press &amp; Partnerships</div>
-              <div className="contact-cell-value">
-                <a href="mailto:partnerships@inkempire.net">partnerships@inkempire.net</a>
-              </div>
-            </div>
-            <div className="contact-cell">
-              <div className="contact-cell-label">Registered</div>
-              <div className="contact-cell-value">
-                Ink Empire Limited<br />
-                New Zealand
-              </div>
-            </div>
-          </div>
+    <section className="contact" id="contact">
+      <div className="side contact-side">
+        <span className="side-num">03</span>
+        <span className="side-label">Contact</span>
+      </div>
+      <div className="contact-body">
+        <h2>
+          <span className="h2-talk">Let's Talk.</span>
+        </h2>
+        <a className="contact-email" href="mailto:hello@inkempire.net">
+          hello@inkempire.net
+        </a>
+        <a className="contact-email" href="mailto:partnerships@inkempire.net">
+          partnerships@inkempire.net
+        </a>
+        <p className="contact-note">
+          For product inquiries, press, or partnership discussions. We read
+          everything and respond to things that fit what we're building.
+        </p>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="contact-form-label">Send us a message</div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your message..."
-              rows={4}
-              value={form.message}
-              onChange={handleChange}
-              required
-            />
-            <button type="submit" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
-            </button>
-            {status === 'sent' && (
-              <p className="contact-form-success">Message sent. We'll be in touch.</p>
-            )}
-            {status === 'error' && (
-              <p className="contact-form-error">Something went wrong. Please try again.</p>
-            )}
-          </form>
-        </div>
-      </section>
-    </div>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="contact-form-label">Send a message</div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your message..."
+            rows={4}
+            value={form.message}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending...' : 'Send Message'}
+          </button>
+          {status === 'sent' && (
+            <p className="contact-form-success">Message sent. We'll be in touch.</p>
+          )}
+          {status === 'error' && (
+            <p className="contact-form-error">Something went wrong. Please try again.</p>
+          )}
+        </form>
+      </div>
+    </section>
   );
 }
